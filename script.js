@@ -166,6 +166,10 @@ equalBtn.addEventListener("click", () => {
   }
 
   else if (expression != "") {
+    if (/[+\-*/]/.test(expression[0])) {
+      expression = "0" + expression;
+      console.log(expression);
+    }
     let total = 0;
     let expressionNums = [];
     let expressionOprs = [];
