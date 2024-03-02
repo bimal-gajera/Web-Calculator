@@ -217,3 +217,27 @@ equalBtn.addEventListener("click", () => {
     display.textContent = "ERROR!"
   }
 });
+
+
+document.addEventListener("keydown", function (event) {
+  if (event.key >= '0' && event.key <= '9') {
+    display.textContent += event.key;
+  }
+  else if (event.key == '.' && !decimalBtn.disabled) {
+    display.textContent += event.key;
+    decimalBtn.disabled = true;
+  }
+  else if (event.key == '+' || event.key == '-' || event.key == '*' || event.key == '/') {
+    display.textContent += event.key;
+    decimalBtn.disabled = false;
+  }
+  else if (event.key == 'Backspace') {
+    deleteBtn.click();
+  }
+  else if (event.key == '=' || event.key == 'Enter') {
+    equalBtn.click();
+  }
+  else if (event.key == 'Escape') {
+    clearBtn.click();
+  }
+});
